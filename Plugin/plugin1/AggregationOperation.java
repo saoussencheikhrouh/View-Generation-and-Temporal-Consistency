@@ -1,0 +1,36 @@
+import java.io.IOException;
+
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.Namespace;
+
+import part1.abstraction.ElementOperation;
+import part1.abstraction.FileOperation;
+import part5.aggregation.FinalAggregation;
+
+
+public class AggregationOperation {
+	
+	public static void abstraction(String file, String src, String dst)  throws JDOMException, IOException
+	{
+		Document document = FileOperation.parseFileXML(file);
+		Element racine = document.getRootElement();
+		Element process = racine.getChild("process", racine.getNamespace());
+		Namespace ns = racine.getNamespace();
+		
+		int pos = file.indexOf(".bpmn");
+		String interm = file.substring(0, pos);
+		String fileResult = interm+"_view"+".bpmn";
+		
+		String interm1=interm+"_td"+".bpmn";
+		
+	String file1 = FinalAggregation.aggregation(ElementOperation.getElement(src, process),
+				ElementOperation.getElement(dst, process), process, ns, racine, "newTask",
+				"newTask", file,interm1);
+	 
+	if(file1 !=null) FileOperation.copyFile(file1, fileResult);
+		
+
+}
+}

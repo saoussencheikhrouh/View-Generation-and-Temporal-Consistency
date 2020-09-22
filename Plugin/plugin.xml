@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=window">
+         <menu
+               label="TOPE">
+            <menu
+                  label="Specify Timed Business Process">
+               <command
+                     commandId="Plugin.command4"
+                     label="New Timed Business Process"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command5"
+                     label="Select Timed Business Process"
+                     style="push">
+               </command>
+            </menu>
+            <menu
+                  label="Verify Timed Business Process">
+               <command
+                     commandId="Plugin.command6"
+                     label="Generate Timed Automata"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command7"
+                     label="Verify Temporal Properties"
+                     style="push">
+               </command>
+            </menu>
+            <menu
+                  label="Generate View">
+               <command
+                     commandId="Plugin.command11"
+                     label="Select Private Business Process"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command8"
+                     label="Abstraction"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command10"
+                     label="Aggregation"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command9"
+                     label="Display Generated View"
+                     style="push">
+               </command>
+            </menu>
+            <menu
+                  label="Verify Temporal Consistency">
+               <command
+                     commandId="Plugin.command1"
+                     label="Generate Timed Graph"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command2"
+                     label="View Timed Graph"
+                     style="push">
+               </command>
+               <command
+                     commandId="Plugin.command3"
+                     label="Verify Consistency "
+                     style="push">
+               </command>
+            </menu>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="plugin.GenerateTGClass"
+            id="Plugin.command1"
+            name="CmdGenerateTG">
+      </command>
+      <command
+            defaultHandler="plugin.OpenTGClass"
+            id="Plugin.command2"
+            name="CmdOpenTG">
+      </command>
+      <command
+            defaultHandler="plugin.ConsAnalysisClass"
+            id="Plugin.command3"
+            name="CmdConsistencyAnalysis">
+      </command>
+      <command
+            id="Plugin.command4"
+            name="CmdNewTBP">
+      </command>
+      <command
+            defaultHandler="plugin.SelectTBPClass"
+            id="Plugin.command5"
+            name="CmdSelectTBP">
+      </command>
+      <command
+            id="Plugin.command6"
+            name="CmdGenerateTimedAutomata">
+      </command>
+      <command
+            id="Plugin.command7"
+            name="CmdVerifyTemporalProperties">
+      </command>
+      <command
+            defaultHandler="Abstraction"
+            id="Plugin.command8"
+            name="Abstraction">
+      </command>
+      <command
+            defaultHandler="DisplayView"
+            id="Plugin.command9"
+            name="DisplayView">
+      </command>
+      <command
+            defaultHandler="Aggregation"
+            id="Plugin.command10"
+            name="Aggregation">
+      </command>
+      <command
+            defaultHandler="SelectPBP"
+            id="Plugin.command11"
+            name="selectPBP">
+      </command>
+   </extension>
+
+</plugin>
